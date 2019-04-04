@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- cfgs Student properties -->
+	<bean name="stud" class="com.manash.beans.StudentTest1">
+		<constructor-arg value="100" />
+		<constructor-arg value="manash" />
+		<constructor-arg value="hyd" />
+		<constructor-arg value="java" />
+		<constructor-arg value="1000" />
+	</bean>
+	 <!-- cfgs MarkList Properties -->
+	<bean name="mark" class="com.manash.beans.MarksList">
+		<constructor-arg value="70" index="0" />
+		<constructor-arg value="80" index="1" />
+		<!-- <constructor-arg value="90" index="1" />
+		<constructor-arg value="80.0f" index="3" /> -->
+	</bean> 
+	<!-- cfgs BankAccount properties -->
+	<bean name="bAccount" class="com.manash.beans.BankAccount">
+		<constructor-arg value="32375624844" name="accno" />
+		<constructor-arg value="manash" name="accholder" />
+		<constructor-arg value="1400.4f" name="dalance" />
+		<constructor-arg value="0002073" name="bankcode" />
+	</bean>
+</beans>

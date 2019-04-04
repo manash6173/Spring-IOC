@@ -1,0 +1,3 @@
+com\manash\beans\VoterChecking.class
+com\manash\test\BeanLifeCycleTest.class
+com\manash\test\BeanLifeCycleTestWithBeanFactory.class

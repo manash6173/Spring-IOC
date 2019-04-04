@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="myInit" default-destroy-method="myDestory" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- spring bean class configurations -->
+<!-- <bean id="voter" class="com.manash.beans.VoterChecking" init-method="myInit" destroy-method="myDestroy">
+     <property name="name" value="raja"/>
+     <property name="age" value="10"/>
+     <property name="addr" value="hyd"/>
+</bean> -->
+<!-- <bean id="voter" class="com.manash.beans.VoterChecking" >
+     <property name="name" value="raja"/>
+     <property name="age" value="10"/>
+     <property name="addr" value="hyd"/>
+</bean> -->
+<bean id="voter1" class="com.manash.beans.VoterChecking" lazy-init="true" >
+     <property name="name" value="raja"/>
+     <property name="age" value="10"/>
+     <property name="addr" value="hyd"/>
+</bean>
+<bean id="voter2" class="com.manash.beans.VoterChecking" lazy-init="true">
+     <property name="name" value="raja"/>
+     <property name="age" value="20"/>
+     <property name="addr" value="hyd"/>
+</bean>
+<bean id="voter3" class="com.manash.beans.VoterChecking" lazy-init="true" >
+     <property name="name" value="raja"/>
+     <property name="age" value="-10"/>
+     <property name="addr" value="hyd"/>
+</bean>
+<bean id="voter4" class="com.manash.beans.VoterChecking" lazy-init="true">
+     <property name="name" value=""/>
+     <!-- <property name="age" value=""/> -->
+     <property name="addr" value="hyd"/>
+</bean>
+</beans>

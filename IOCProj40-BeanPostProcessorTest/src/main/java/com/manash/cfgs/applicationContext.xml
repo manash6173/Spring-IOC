@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- cfgs BO class -->
+<bean id="empbo" class="com.manash.bo.EmployeeBO" scope="prototype"/>
+<bean id="stubo" class="com.manash.bo.StudentBO" scope="prototype"/>
+<bean id="dao" class="com.manash.dao.DAOImp" scope="singleton"/>
+<bean id="service" class="com.manash.service.ServiceImp">
+    <property name="dao" ref="dao"/>
+    <lookup-method name="createEmployee" bean="empbo"/>
+    <lookup-method name="createStudent" bean="stubo"/>
+</bean>
+<bean id="bpp" class="com.manash.bpp.DOJPostProcess"/>
+
+
+</beans>

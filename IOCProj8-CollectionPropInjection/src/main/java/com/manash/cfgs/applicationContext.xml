@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- cfgs Student class properties -->
+	<bean id="stud" class="com.manash.beans.Student">
+		<property name="marks">
+			<!-- <array value-type="int"> <value>70</value> <value>80</value> <value>90</value> 
+				</array> -->
+			<list>
+				<value>70</value>
+				<value>80</value>
+				<value>90</value>
+			</list>
+		</property>
+		<property name="dates">
+			<list>
+				<ref bean="dtSys" />
+				<ref bean="dtDOB" />
+				<ref bean="dtDOJ" />
+			</list>
+
+		</property>
+	</bean>
+	<!-- cfgs SysDate -->
+	<bean id="dtSys" class="java.util.Date" />
+	<!-- cfgs DOB -->
+	<bean id="dtDOB" class="java.util.Date">
+		<property name="year" value="90" />
+		<property name="month" value="10" />
+		<property name="date" value="23" />
+	</bean>
+	<!-- cfgs DOJ -->
+	<bean id="dtDOJ" class="java.util.Date">
+		<property name="year" value="117" />
+		<property name="month" value="8" />
+		<property name="date" value="22" />
+	</bean>
+	<!-- cfg college class properties -->
+	<bean id="colg" class="com.manash.beans.College">
+		<property name="names">
+			<list>
+				<value>raja</value>
+				<value>rani</value>
+				<value>ramesh</value>
+				<value>rajesh</value>
+				<value>raja</value>
+			</list>
+		</property>
+		<property name="dateList">
+			<list>
+				<ref bean="dtSys" />
+				<ref bean="dtSys" />
+				<ref bean="dtDOB" />
+				<ref bean="dtDOJ" />
+			</list>
+		</property>
+		<property name="lists">
+			<list>
+				<value>raja</value>
+				<value>101</value>
+				<value>1000.0</value>
+				<value>java</value>
+				<ref bean="dtDOJ" />
+			</list>
+		</property>
+
+	</bean>
+
+	<!-- cfgs University class properties -->
+	<bean id="unvs" class="com.manash.beans.University">
+		<property name="phoneNumber">
+			<set>
+				<value>8888888888</value>
+				<value>9999999999</value>
+				<value>8888888888</value>
+				<value>8888888888</value>
+				<value>8888888888</value>
+				<value>7777777777</value>
+			</set>
+		</property>
+		<property name="dates">
+			<set>
+				<ref bean="dtSys" />
+				<ref bean="dtDOB" />
+				<ref bean="dtDOJ" />
+			</set>
+		</property>
+	</bean>
+	<!-- cfgs University class properties -->
+	<bean id="fact" class="com.manash.beans.Faculty">
+	     <property name="subjects">
+	           <map>
+	           <entry key="hk" value="core java"></entry>
+	           <entry key="vijay" value="oracle"></entry>
+	           <entry key="naveen" value="HTML"></entry>
+	           <entry>
+	              <key><value>kishore</value></key>
+	              <value>C++</value>
+	           </entry>
+	           </map>
+	     </property>
+	     <property name="dates">
+	        <map>
+	           <entry key="kishoer" value-ref="dtSys"></entry>
+	        </map>
+	     </property>
+	</bean>
+	<bean id="fruit" class="com.manash.beans.FruitColors">
+	<constructor-arg >
+	       <props>
+	          <prop key="banana">Yellow</prop>
+	          <prop key="apple">red</prop>
+	          <prop key="orange">orange</prop>
+	       </props>
+	</constructor-arg>
+	</bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

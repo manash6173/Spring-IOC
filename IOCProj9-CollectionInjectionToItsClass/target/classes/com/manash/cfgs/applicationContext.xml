@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<util:list id="empList" list-class="java.util.ArrayList"
+		value-type="java.lang.String">
+		<value>raja</value>
+		<value>rani</value>
+		<value>rani</value>
+		<value>rajesh</value>
+	</util:list>
+	<util:list id="dateList">
+		<ref bean="dtSys" />
+		<ref bean="dtDOB" />
+	</util:list>
+	<bean id="dtSys" class="java.util.Date" />
+	<bean id="dtDOB" class="java.util.Date">
+		<property name="year" value="90" />
+		<property name="month" value="9" />
+		<property name="date" value="10" />
+	</bean>
+	<util:set id="phoneNo" set-class="java.util.HashSet"
+		value-type="java.lang.Long">
+		<value>9999999999</value>
+		<value>8888888888</value>
+		<value>7777777777</value>
+		<value>7777777777</value>
+	</util:set>
+	<util:set id="dateSet" set-class="java.util.HashSet">
+		<ref bean="dtSys" />
+		<ref bean="dateList" />
+	</util:set>
+
+	<util:map id="capitals" map-class="java.util.HashMap" key-type="java.lang.String" value-type="java.lang.String">
+		<entry key="india" value="delhi" />
+		<entry>
+			<key>
+				<value>china</value>
+			</key>
+			<value>bejing</value>
+		</entry>
+	</util:map>
+	<util:map id="dateMap" map-class="java.util.Hashtable" key-type="java.lang.String" value-type="java.util.Date">
+		<entry key="date1" value-ref="dtSys"/>
+		<entry>
+		   <key><value>date2</value></key>
+		   <ref bean="dtDOB"/>
+		</entry>
+	</util:map>
+	
+	<util:properties id="colors">
+	      <prop key="banana">yellow</prop>
+	      <prop key="orange">orange</prop>
+	      <prop key="apple">red</prop>
+	</util:properties>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

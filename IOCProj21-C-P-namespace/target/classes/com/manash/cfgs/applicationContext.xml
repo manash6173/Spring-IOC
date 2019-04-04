@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="dt" class="java.util.Date" c:year="100" c:month="10" c:date="4"/>
+<!-- target class cfgs -->
+<bean id="emp" class="com.manash.beans.EmployeeDetails" p:eid="123" p:ename="raja" p:dept-ref="dept" p:clazz-ref="cls"/>
+<!-- dependent class cfgs -->
+<bean id="dept" class="com.manash.beans.Department" c:dno="9001" c:dname="IT" c:dos-ref="dt"/>
+<bean id="cls" class="java.lang.Class" factory-method="forName" c:clazz="java.util.Date"/>
+</beans>

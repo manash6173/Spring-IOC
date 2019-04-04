@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  <!-- Cfg Dependent class -->
+   <bean id="dtdCourier"  class="com.manash.beans.DTDC" lazy-init="false"/>
+   <bean id="bDartCourier"  class="com.manash.beans.BlueDart"/>
+   <bean id="ffCourier"  class="com.manash.beans.FirstFlight"/>
+   <!-- Cfg Target class -->
+   <bean id="fpkt"  class="com.manash.beans.Flipkart" scope="singleton">
+       <constructor-arg name="courier" ref="ffCourier"/>
+   </bean> 
+</beans>

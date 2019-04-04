@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- cfgs beans -->
+<bean id="bs" class="com.manash.service.BankService">
+ <replaced-method name="intrAmtCals" replacer="bsr">
+            <arg-type>Float</arg-type>
+            <arg-type>Float</arg-type>
+     </replaced-method>
+</bean>
+<bean id="bsr" class="com.manash.service.BankServiceReplacer">
+    <property name="rate" value="1.0f"></property>
+</bean>
+</beans>

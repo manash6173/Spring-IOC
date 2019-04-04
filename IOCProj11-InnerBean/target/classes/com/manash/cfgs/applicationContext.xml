@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- cfgs bean classes -->
+	<bean name="virat,kohli" class="com.manash.beans.ProffessonalCricketer">
+		<constructor-arg value="virat Kohli"></constructor-arg>
+		<constructor-arg>
+		      <bean id="bat1" class="com.manash.beans.Bat">
+		      <property name="make" value="MRF"></property>
+		      </bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="dhoni" class="com.manash.beans.ProffessonalCricketer">
+		<constructor-arg value="MS Dhoni"></constructor-arg>
+		<constructor-arg>
+		      <bean id="bat1" class="com.manash.beans.Bat"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="com.manash.beans.ProffessonalCricketer">
+	   <constructor-arg value="Rohit Sharma"></constructor-arg>
+	   <constructor-arg>
+	      <bean class="com.manash.beans.Bat"></bean>
+	   </constructor-arg>
+	</bean>
+
+</beans>

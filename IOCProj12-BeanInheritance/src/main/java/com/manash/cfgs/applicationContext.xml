@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- <bean id="car1" class="com.manash.beans.Car">
+		<property name="regID" value="OD07TN7878" />
+		<property name="ownerName" value="Manash" />
+		<property name="make" value="Maruti-Suzuki" />
+		<property name="model" value="Swift" />
+		<property name="engineCC" value="1200" />
+		<property name="fuelType" value="disiel" />
+		<property name="color" value="red" />
+		<property name="seatNo" value="5" />
+		<property name="price" value="600000" />
+	</bean>
+	<bean id="car2" class="com.manash.beans.Car">
+	    <property name="regID" value="OD07TN6767" />
+		<property name="ownerName" value="Raja" />
+		<property name="make" value="Maruti-Suzuki" />
+		<property name="model" value="Swift" />
+		<property name="engineCC" value="1200" />
+		<property name="fuelType" value="disiel" />
+		<property name="color" value="red" />
+		<property name="seatNo" value="5" />
+		<property name="price" value="600000" />
+	</bean>
+	<bean id="car3" class="com.manash.beans.Car" parent="car1">
+	     <property name="regID" value="OD07MN4141"/>
+	     <property name="ownerName" value="Abhinash"/>
+	     <property name="color" value="black"/>
+	</bean> -->
+	<bean id="baseCar" class="com.manash.beans.Car" abstract="true">
+	     <property name="regID" value="null"/>
+	     <property name="ownerName" value="null"/>
+	     <property name="make" value="Maruti-Suzuki" />
+		<property name="model" value="Swift" />
+		<property name="engineCC" value="1200" />
+		<property name="fuelType" value="disiel" />
+		<property name="color" value="red" />
+		<property name="seatNo" value="5" />
+		<property name="price" value="600000" />
+	</bean>
+	<bean id="car1" class="com.manash.beans.Car" parent="baseCar">
+	     <property name="regID" value="OD07MN4141"/>
+	     <property name="ownerName" value="Abhinash"/>
+	     <property name="color" value="black"/>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

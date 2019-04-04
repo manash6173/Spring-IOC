@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+  <!-- person class configuration -->
+  <bean id="per" class="com.manash.beans.Person" dependency-check="objects">
+      <property name="pname" value="raja"/>
+     <property name="pid" value="123654"/> 
+      <property name="mobile" ref="dinfo"/>
+  </bean>
+  <bean id="dinfo" class="com.manash.beans.DeviceInfo" dependency-check="simple">
+      <property name="make" value="mi"/>
+      <property name="number" value="789654123"/>
+      <property name="iemi" value="123654"/>
+  </bean>
+
+</beans>

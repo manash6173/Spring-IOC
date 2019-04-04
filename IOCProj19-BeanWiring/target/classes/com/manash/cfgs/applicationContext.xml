@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+ <!-- configure dependent class object -->
+ <bean id="tp1" class="com.manash.beans.TourPlan" >
+     <property name="places">
+           <array>
+               <value>manali</value>
+               <value>wagrah border</value>
+               <value>simla</value>
+               <value>ooty</value>
+           </array>
+     </property>
+ </bean>
+ <bean id="tp2" class="com.manash.beans.TourPlan">
+     <property name="places">
+           <array>
+               <value>puri</value>
+               <value>konakrk</value>
+               <value>lingRaj Tamle</value>
+               <value>GhataGaon</value>
+           </array>
+     </property>
+ </bean>
+ <bean id="cl" class="java.util.Calendar" factory-method="getInstance" />
+ <!-- configure target class property -->
+ <bean id="agent" class="com.manash.beans.TravelAgent" autowire="byName">
+ </bean>
+</beans>
